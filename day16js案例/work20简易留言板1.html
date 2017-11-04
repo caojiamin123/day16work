@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work20简易留言板1</title>
+	</head>
+	<body>
+		<input type="text" name="" id="txt"/>
+		<input type="button" id="btn" value="按钮" />
+		<ul id="box">
+			<li>123231</li>
+			<li>123231</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var obox=document.getElementById("box");
+			var ali=obox.children;
+			var obtn=document.getElementById("btn");
+			var otxt=document.getElementById("txt");
+			
+			for (var i=0;i<ali.length;i++) {
+				ali[i].onclick=function(){
+					alert(this.innerHTML);
+				}
+			}
+			
+			obtn.onclick=function(){
+				var oli=document.createElement("li");
+				oli.innerHTML=otxt.value;
+				obox.appendChild(oli);
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work19简易留言板</title>
+	</head>
+	<body>
+		<input type="text" name="" id="txt"/>
+		<input type="button" id="btn" value="按钮" />
+		<ul id="box">
+			<li>123231</li>
+			<li>123231</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var obox=document.getElementById("box");
+			var ali=obox.children;
+			
+			for (var i=0;i<ali.length;i++) {
+				ali[i].onclick=function(){
+					alert(this.innerHTML);
+				}
+			}
+		}
+	</script>
+</html>

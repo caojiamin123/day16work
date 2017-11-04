@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work22事件绑定</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function addEvent(obj,sev,fn){
+			if(obj.addEventListener){
+				return obj.addEventListener(sev,fn,false);
+			}else{
+				return obj.attachEvent("on"+sev,fn);
+			}
+		}
+	</script>
+</html>

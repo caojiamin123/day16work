@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work13onmouseover的问题1</title>
+		<style type="text/css">
+			#div{
+				width: 300px;
+				height: 300px;
+				background: red;
+			}
+			#h3{
+				width: 300px;
+				height: 100px;
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div">
+			<h3 id="h3"></h3>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var odiv=document.getElementById("div");
+			var oh3=document.getElementById("h3");
+			
+			odiv.onmouseover=function(ev){
+				alert("移入了");
+			}
+		}
+	</script>
+</html>

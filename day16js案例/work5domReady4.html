@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>work5domReady4</title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		if(document.addEventListener){
+			document.addEventListener("DOMContentLoaded",function(){
+				alert("ok");
+			},false);
+		}else{
+			document.attachEvent("onreadystatechange",function(){
+				if(document.readyState=="complete"){
+					alert("ok");
+				}
+			})
+		}
+	</script>
+</html>

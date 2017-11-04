@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work9onmouseout的问题2</title>
+		<style type="text/css">
+			#div{
+				width: 300px;
+				height: 300px;
+				background: red;
+			}
+			#h3{
+				width: 300px;
+				height: 100px;
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div">
+			<h3 id="h3"></h3>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var odiv=document.getElementById("div");
+			var oh3=document.getElementById("h3");
+			
+			odiv.onmouseout=function(ev){
+				var oevent=ev||event;
+				var oto=oevent.relatedTarget;
+				alert(oto);
+			}
+		}
+	</script>
+</html>

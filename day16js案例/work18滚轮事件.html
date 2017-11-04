@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work18滚轮事件</title>
+		<style type="text/css">
+			#div{
+				width:200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div"></div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var odiv=document.getElementById("div");
+			
+			function addEvent(obj,sev,fn){
+				if(obj.addEventListener){
+					return obj.addEventListener(sev,fn,false);
+				}else{
+					return obj.attachEvent("on"+sev,fn);
+				}
+			}
+			
+			function addWheel(obj,fn){
+				function wheel(ev){
+					var oevent=ev||event;
+					var bDown=true;
+					bDown=oevent.wheelDelta?oevent.wheelDelta>0:oevent.detail<0;
+					fn&&fn(bDown);
+					oevent.preventDefault&&oevent.preventDefault();
+					return false;
+				}
+				if(window.navigator.userAgent.toLowerCase().indexOf('firefox')!=-1){
+					obj.addEventListener('DOMMouseScroll',wheel,false);
+				}else{
+					addEvent(obj,"mousewheel",wheel);
+				}
+			}
+			
+			addWheel(odiv,function(bDown){
+				if(bDown){
+					odiv.style.height=odiv.offsetHeight-10+"px";
+				}else{
+					odiv.style.height=odiv.offsetHeight+10+"px";
+				}
+			})
+			
+		}
+	</script>
+</html>
